@@ -1,0 +1,20 @@
+groups:
+  - name: minecraft
+    rules:
+      - alert: MinecraftServerDown
+        expr: up{job="minecraft"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Minecraft server is down!"
+          description: "The Paper server at {{ $labels.instance }} is not responding for more than 2 minutes."
+
+      - alert: LowTPS
+        expr: minecraft_tps < 15
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+        summary: "TPS below 15"
+

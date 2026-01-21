@@ -1,0 +1,25 @@
+{
+  "title": "Minecraft Paper Server",
+  "panels": [
+    {
+      "title": "Server Online",
+      "type": "stat",
+      "targets": [{"expr": "minecraft_up"}]
+    },
+    {
+      "title": "Players Online",
+      "type": "graph",
+      "targets": [{"expr": "minecraft_players_online"}]
+    },
+    {
+      "title": "Max Players",
+      "type": "graph",
+      "targets": [{"expr": "minecraft_players_max"}]
+    },
+    {
+      "title": "TPS",
+      "type": "graph",
+      "targets": [{"expr": "minecraft_tps"}]
+    }
+  ]
+}
